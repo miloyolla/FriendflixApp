@@ -13,8 +13,15 @@
   <ion-card class="welcome-card">
     <img src="/assets/shapes.svg" alt=""/>
     <ion-card-header>
-      <ion-card-title>{{ dadosPost.nome_user }}</ion-card-title>
-      <p>{{ dadosPost.username }}</p>
+      <div class="topo">
+        <div>
+          <ion-card-title>{{ dadosPost.nome_user }}</ion-card-title>
+          <p>{{ dadosPost.username }}</p>
+        </div>
+        <div>
+          <ion-icon *ngIf="dadosPost.status_spoiler" size="large" name="alert" color="danger" slot="end"></ion-icon>
+        </div>
+      </div>
     </ion-card-header>
     <ion-card-content>
       <p>

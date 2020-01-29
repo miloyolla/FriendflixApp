@@ -23,6 +23,7 @@ export class HomePage {
     status_dislike:false,
     anexo: 'foto',
     horario:'14:02',
+    status_spoiler:true,
   }
 
   newLike(post){
