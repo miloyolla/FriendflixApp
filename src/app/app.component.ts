@@ -21,16 +21,16 @@ export class AppComponent {
       url: '/list',
       icon: 'list'
     },
-    {
-      title: 'Perfil ',
-      url: '/perfil',
-      icon: 'contact'
-    },
-    {
-      title: 'Series',
-      url: '/series',
-      icon: 'tablet-portrait'
-    },
+    // {
+    //   title: 'Perfil ',
+    //   url: '/perfil',
+    //   icon: 'contact'
+    // },
+    // {
+    //   title: 'Series',
+    //   url: '/series',
+    //   icon: 'tablet-portrait'
+    // },
     {
       title: 'Favorites',
       url: '/favorites',

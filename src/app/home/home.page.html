@@ -13,14 +13,20 @@
   <ion-card class="welcome-card">
     <img src="/assets/shapes.svg" alt=""/>
     <ion-card-header>
-      <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to {{ title }}</ion-card-title>
+      <ion-card-title>{{ dadosPost.nome_user }}</ion-card-title>
+      <p>{{ dadosPost.username }}</p>
     </ion-card-header>
     <ion-card-content>
       <p>
-        Now that your app has been created, you'll want to start building out features
-        and components. Check out some of the resources below for next steps.
+        {{dadosPost.texto}}
       </p>
+      <div id="likes">
+        <ion-icon size="large" name="thumbs-up" color="{{dadosPost.status_like ? 'primary': 'secundary' }}" (click) = "newLike(post)"></ion-icon>
+        {{dadosPost.qtd_likes}}
+        <ion-icon size="large" name="thumbs-down" color="{{dadosPost.status_dislike ? 'primary': 'secundary' }}" (click) = "newDislike(post)"></ion-icon>
+        {{dadosPost.qtd_dislikes}}
+      </div>
+
     </ion-card-content>
   </ion-card>
 
