@@ -10,28 +10,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card">
+  <ion-card class="welcome-card" *ngFor="let post of dadosPost">
     <img src="/assets/shapes.svg" alt=""/>
     <ion-card-header>
       <div class="topo">
         <div>
-          <ion-card-title>{{ dadosPost.nome_user }}</ion-card-title>
-          <p>{{ dadosPost.username }}</p>
+          <ion-card-title>{{ post.nome_user }}</ion-card-title>
+          <p>{{ post.username }}</p>
         </div>
         <div>
-          <ion-icon *ngIf="dadosPost.status_spoiler" size="large" name="alert" color="danger" slot="end"></ion-icon>
+          <ion-icon *ngIf="post.status_spoiler" size="large" name="alert" color="danger" slot="end"></ion-icon>
         </div>
       </div>
     </ion-card-header>
     <ion-card-content>
       <p>
-        {{dadosPost.texto}}
+        {{ post.texto }}
       </p>
       <div id="likes">
-        <ion-icon size="large" name="thumbs-up" color="{{dadosPost.status_like ? 'primary': 'secundary' }}" (click) = "newLike(post)"></ion-icon>
-        {{dadosPost.qtd_likes}}
-        <ion-icon size="large" name="thumbs-down" color="{{dadosPost.status_dislike ? 'primary': 'secundary' }}" (click) = "newDislike(post)"></ion-icon>
-        {{dadosPost.qtd_dislikes}}
+        <ion-icon size="large" name="thumbs-up" color="{{post.status_like ? 'primary': 'secundary' }}" (click) = "newLike(post)"></ion-icon>
+        {{ post.qtd_likes }}
+        <ion-icon size="large" name="thumbs-down" color="{{post.status_dislike ? 'primary': 'secundary' }}" (click) = "newDislike(post)"></ion-icon>
+        {{ post.qtd_dislikes }}
       </div>
 
     </ion-card-content>

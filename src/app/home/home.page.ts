@@ -11,7 +11,21 @@ export class HomePage {
 
   constructor() {}
 
-  dadosPost: object = {
+  dadosPost: object = [{
+    nome_user: 'Mileny',
+    foto_user: 'foto',
+    username: '@miloyolla',
+    texto:'hello friends, esse é meu primeiro comentário sobre séries nesse novo app chamado Friendflix. <3',
+    qtd_likes:0,
+    qtd_dislikes:0,
+    qtd_compartilhamentos:5,
+    status_like:false,
+    status_dislike:false,
+    anexo: 'foto',
+    horario:'14:02',
+    status_spoiler:false,
+  },
+  {
     nome_user: 'Mileny',
     foto_user: 'foto',
     username: '@miloyolla',
@@ -24,51 +38,79 @@ export class HomePage {
     anexo: 'foto',
     horario:'14:02',
     status_spoiler:true,
-  }
+  },
+  {
+    nome_user: 'Mileny',
+    foto_user: 'foto',
+    username: '@miloyolla',
+    texto:'hello friends, esse é meu primeiro comentário sobre séries nesse novo app chamado Friendflix. <3',
+    qtd_likes:0,
+    qtd_dislikes:0,
+    qtd_compartilhamentos:5,
+    status_like:false,
+    status_dislike:false,
+    anexo: 'foto',
+    horario:'14:02',
+    status_spoiler:true,
+  },
+  {
+    nome_user: 'Mileny',
+    foto_user: 'foto',
+    username: '@miloyolla',
+    texto:'hello friends, esse é meu primeiro comentário sobre séries nesse novo app chamado Friendflix. <3',
+    qtd_likes:0,
+    qtd_dislikes:0,
+    qtd_compartilhamentos:5,
+    status_like:false,
+    status_dislike:false,
+    anexo: 'foto',
+    horario:'14:02',
+    status_spoiler:false,
+  }]
 
   newLike(post){
-    if(!this.dadosPost.status_dislike){
-      if(this.dadosPost.status_like){
-        this.dadosPost.qtd_likes--;
+    if(!post.status_dislike){
+      if(post.status_like){
+        post.qtd_likes--;
       }
       else{
-        this.dadosPost.qtd_likes++;
+        post.qtd_likes++;
       }
-      this.dadosPost.status_like=!this.dadosPost.status_like;
+      post.status_like=!post.status_like;
     }
     else{
-      this.dadosPost.status_dislike=!this.dadosPost.status_dislike;
-      this.dadosPost.qtd_dislikes--;
-      if(this.dadosPost.status_like){
-        this.dadosPost.qtd_likes--;
+      post.status_dislike=!post.status_dislike;
+      post.qtd_dislikes--;
+      if(post.status_like){
+        post.qtd_likes--;
       }
       else{
-        this.dadosPost.qtd_likes++;
+        post.qtd_likes++;
       }
-      this.dadosPost.status_like=!this.dadosPost.status_like;
+      post.status_like=!post.status_like;
     }
 }
 
   newDislike(post){
-    if(!this.dadosPost.status_like){
-      if(this.dadosPost.status_dislike){
-        this.dadosPost.qtd_dislikes--;
+    if(!post.status_like){
+      if(post.status_dislike){
+        post.qtd_dislikes--;
       }
       else{
-        this.dadosPost.qtd_dislikes++;
+        post.qtd_dislikes++;
       }
-      this.dadosPost.status_dislike=!this.dadosPost.status_dislike;
+      post.status_dislike=!post.status_dislike;
     }
     else{
-      this.dadosPost.status_like=!this.dadosPost.status_like;
-      this.dadosPost.qtd_likes--;
-      if(this.dadosPost.status_dislike){
-        this.dadosPost.qtd_dislikes--;
+      post.status_like=!post.status_like;
+      post.qtd_likes--;
+      if(post.status_dislike){
+        post.qtd_dislikes--;
       }
       else{
-        this.dadosPost.qtd_dislikes++;
+        post.qtd_dislikes++;
       }
-      this.dadosPost.status_dislike=!this.dadosPost.status_dislike;
+      post.status_dislike=!post.status_dislike;
     }
   }
 }
